@@ -1,1 +1,0 @@
-# GuardianIQ-Front-end
