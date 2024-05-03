@@ -44,6 +44,7 @@ export default {
   text-align: left;
   margin-left: 60px;
   margin-top: 30px;
+  color: white;
 }
 
 .toolbar2 {
