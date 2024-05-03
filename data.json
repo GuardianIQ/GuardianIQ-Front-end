@@ -1,0 +1,52 @@
+{
+  "results": [
+    {
+      "id": 0,
+      "tipo": "cámara",
+      "marca": "Hikvision",
+      "modelo": "DS-2CD2385-FD",
+      "ubicación": "Entrada principal",
+      "imagen": "https://m.media-amazon.com/images/I/51lgGp0p-zL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+      "id": 1,
+      "tipo": "sensor",
+      "marca": "Ajax",
+      "modelo": "MotionProtect Plus",
+      "ubicación": "Dormitorio principal",
+      "imagen": "https://cdn.tvc.mx/media/822837/AJAX-MotionProtect-PlusW-Detector-de-movimiento-inal%C3%A1mbrico-Microondas-e-Infrarrojo.-Color-Negro-black-tvc-8.png"
+    },
+    {
+      "id": 2,
+      "tipo": "alarma",
+      "marca": "EKEN",
+      "modelo": "T1",
+      "ubicación": "Pasillo",
+      "imagen": "https://m.media-amazon.com/images/I/51K8f+k95JL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+      "id": 3,
+      "tipo": "Sensor",
+      "marca": "SPC",
+      "modelo": "APERIO 6311B",
+      "ubicación": "Pasillo",
+      "imagen": "https://i.ebayimg.com/images/g/njkAAOSwtqtlG4~7/s-l500.jpg"
+    },
+    {
+      "id": 4,
+      "tipo": "alarma",
+      "marca": "EKEN",
+      "modelo": "T1",
+      "ubicación": "Pasillo",
+      "imagen": "https://m.media-amazon.com/images/I/51K8f+k95JL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+      "id": 5,
+      "tipo": "Camara",
+      "marca": "HIKVISION",
+      "modelo": "DS-2CE72DF3T-PIRXOS",
+      "ubicación": "Pasillo",
+      "imagen": "https://cdn.adiglobaldistribution.co.uk/pim/300X300/10003/1072061414_1.jpg"
+    }
+  ]
+}

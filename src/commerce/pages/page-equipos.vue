@@ -1,15 +1,21 @@
 <template>
-<router-view></router-view>
+  <div id="app" class="appbackground">
+    <Toolbar />
+    <h1 class="equipseguridad">Equipos de seguridad</h1>
+    <div class="winners">
+      <ResultCard v-for="(result, index) in results" :key="index" :result="result" />
+    </div>
+    <FooterContent />
+  </div>
 </template>
 
 <script>
-import ApiService from './commerce/services/result-api.service.js';
-import FooterContent from './commerce/components/footer-content.component.vue';
-import Toolbar from './commerce/components/toolbar-content.component.vue';
-import ResultCard from './commerce/components/results-card.component.vue';
-
+import Toolbar from "../components/toolbar-content.component.vue";
+import FooterContent from "../components/footer-content.component.vue";
+import ResultCard from "../components/results-card.component.vue";
+import ApiService from "../services/result-api.service.js";
 export default {
-  name: 'App',
+  name: 'pageEquipos',
   components: {
     Toolbar,
     FooterContent,
@@ -31,7 +37,9 @@ export default {
       this.error = 'Error fetching results. Please try again later.';
     }
   }
-};
+}
+
+
 </script>
 
 <style scoped>
@@ -46,6 +54,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   border-color: #11315C;
+  margin-left: 10%;
 }
 
 .appbackground{
