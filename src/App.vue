@@ -3,53 +3,10 @@
 </template>
 
 <script>
-import ApiService from './commerce/services/result-api.service.js';
-import FooterContent from './commerce/components/footer-content.component.vue';
-import Toolbar from './commerce/components/toolbar-content.component.vue';
-import ResultCard from './commerce/components/results-card.component.vue';
 
-export default {
-  name: 'App',
-  components: {
-    Toolbar,
-    FooterContent,
-    ResultCard
-  },
-  data() {
-    return {
-      results: [],
-      loading: true,
-      error: null
-    };
-  },
-  async created() {
-    try {
-      this.results = await ApiService.getEquipos();
-      this.loading = false;
-    } catch (error) {
-      console.error('Error fetching results:', error);
-      this.error = 'Error fetching results. Please try again later.';
-    }
-  }
-};
 </script>
 
 <style scoped>
 
-.equipseguridad {
-  margin-left: 10%;
-  color: white;
-}
-
-.winners {
-  width: 85%;
-  display: flex;
-  flex-wrap: wrap;
-  border-color: #11315C;
-}
-
-.appbackground{
-  background: #11315C;
-}
 
 </style>
