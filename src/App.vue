@@ -1,11 +1,16 @@
-<script >
+<script>
+import navbarComponent from "@/public/components/navbar/navbar.component.vue";
+export default {
+  components: {
+    navbarComponent
+  }
+}
 </script>
 
 <template>
-  <router-view/>
 
+  <router-view />
 </template>
 
-<style >
-
+<style scoped>
 </style>

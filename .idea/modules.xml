@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/GuardianIQ-Front-end.iml" filepath="$PROJECT_DIR$/.idea/GuardianIQ-Front-end.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Frontend-GuardianIQ.iml" filepath="$PROJECT_DIR$/.idea/Frontend-GuardianIQ.iml" />
     </modules>
   </component>
 </project>
