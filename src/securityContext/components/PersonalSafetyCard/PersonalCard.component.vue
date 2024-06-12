@@ -5,26 +5,49 @@
     <p class="guard-district">{{ personal.distrito }}</p>
     <p class="guard-age">Edad: {{ personal.edad }} años</p>
     <p class="guard-sex">Sexo: {{ personal.sexo }}</p>
-    <p class="guard-experience">Experiencia: {{ personal.experiencia }}</p>
+    <p class="guard-experience">Experiencia: {{ personal.experiencia }} años</p>
     <p class="guard-availability">Disponibilidad: {{ personal.disponibilidad }}</p>
     <button class="guard-button" @click="contratar">Contratar</button>
+    <payment v-if="showPayment" @pagoRealizado="handlePayment"></payment>
     <button class="guard-button" @click="contactar">Contactar</button>
   </div>
 </template>
 
 <script>
+import payment from "../../../public/components/payment/payment.vue";
+import shoppingdeviceCard from "../SafetyDeviceCard-component/shoppingdeviceCard.vue";
 
 export default {
   props: {
     personal: Object
   },
+  data() {
+    return {
+      showPayment: false,
+    };
+  },
   methods: {
+    submitForm() {
+
+      this.showSuccessMessage = true;
+      this.realizarpago();
+    },
     contratar() {
-      alert(`Contratar a ${this.personal.nombre}`);
+      if (!this.showPayment) {
+        this.showPayment = true;
+      }
     },
     contactar() {
       alert(`Contactar a ${this.personal.nombre}`);
+    },
+    handlePayment() {
+      setTimeout(() => {
+        this.showPayment = false;
+      }, 2000);
     }
+  },
+  components: {
+    payment
   }
 }
 </script>

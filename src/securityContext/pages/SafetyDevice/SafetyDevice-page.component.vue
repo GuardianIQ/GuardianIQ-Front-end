@@ -25,9 +25,9 @@
 </template>
 
 <script>
-import safetyDeviceCardComponent from "@/securityContext/components/SafetyDeviceCard-component/SafetyDeviceCard.component.vue";
-import navbarComponent from "@/public/components/navbar/navbar.component.vue";
-import { fetchSafetyDevices } from "@/securityContext/service/safetydevice.service.js";
+import safetyDeviceCardComponent from "../../components/SafetyDeviceCard-component/SafetyDeviceCard.component.vue";
+import navbarComponent from "../../../public/components/navbar/navbar.component.vue";
+import {fetchSafetyDevices} from "../../service/safetydevice.service.js";
 
 export default {
   name: 'App',

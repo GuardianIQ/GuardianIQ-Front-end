@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import {ShoppingCartEntity} from "@/securityContext/model/shoppingCardtEntity.js";
+import {ShoppingCartEntity} from "../../model/shoppingCardtEntity.js";
 
 export default {
   data() {
