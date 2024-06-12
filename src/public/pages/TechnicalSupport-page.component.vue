@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import formSupport from "@/public/pages/FormSupport.vue";
+import formSupport from "./FormSupport.vue";
 export default {
   components: {
     formSupport

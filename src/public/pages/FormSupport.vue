@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import navbarComponent from "@/public/components/navbar/navbar.component.vue";
+import navbarComponent from "../components/navbar/navbar.component.vue";
 export default {
   data() {
     return {

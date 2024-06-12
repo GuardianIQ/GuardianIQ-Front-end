@@ -20,14 +20,13 @@
     </pv-toolbar>
   </header>
 
-  <pv-sidebar v-model:visible="drawer">
+  <pv-sidebar v-model:visible="drawer" class="sidebar">
     <div class="flex-column">
-      <router-link v-for="item in items" :key="item.label" :to="item.to">
+      <router-link v-for="item in items" :key="item.label" :to="item.to" class="sidebar-link">
         <pv-button class="p-button-text text-dark">{{ item.label }}</pv-button>
       </router-link>
 
-      <button @click="logout" class="logout-button">LogOut</button>
-
+      <button @click="logout" class="logout-button">Log Out</button>
     </div>
   </pv-sidebar>
 
@@ -47,7 +46,7 @@ export default {
         { label: 'Home', to: '/home' },
         { label: 'PersonalCardPage', to: '/PersonalCardPage' },
         { label: 'SafetyDevicePage', to: '/SafetyDevicePage' },
-        {label:   'orderList', to: '/orderList'},
+        {label:   ' Security Consulting', to: '/orderList'},
         {label: 'formSupport', to: '/formSupport'}
       ]
     };
@@ -130,28 +129,28 @@ export default {
 
 .toolbar {
   width: 100%;
-  z-index: 1000; /* Ensure it stays on top of other elements */
+  z-index: 1000;
   top: 0;
   left: 0;
 }
 
 .main-content {
-  margin-top: 60px; /* Adjust based on the height of your toolbar */
+  margin-top: 60px;
 }
 
- .logout-button {
-   background-color: #f44336; /* Color de fondo rojo */
-   color: white; /* Color de texto blanco */
-   border: none; /* Sin borde */
-   padding: 10px 20px; /* Relleno de 10px arriba y abajo, 20px a los lados */
-   text-align: center; /* Alineación de texto al centro */
-   text-decoration: none; /* Sin decoración de texto */
-   display: inline-block; /* Para que se comporte como un bloque pero se alinee como un elemento en línea */
-   font-size: 16px; /* Tamaño de fuente de 16px */
-   margin: 4px 2px; /* Margen de 4px arriba y abajo, 2px a los lados */
-   cursor: pointer; /* Cambia el cursor a un puntero cuando se pasa por encima */
-   border-radius: 5px; /* Bordes redondeados */
- }
+.logout-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
 .logout-button:hover {
   background-color: #d32f2f;
