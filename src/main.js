@@ -1,5 +1,3 @@
-
-
 import { createApp } from 'vue'
 import App from './App.vue'
 import 'primeicons/primeicons.css';
@@ -78,18 +76,19 @@ app.component('pv-checkbox',       Checkbox)
 app.component('pv-data-table',     DataTable)
 app.component('pv-dialog',         Dialog)
 app.component('pv-dropdown',       Dropdown)
-    app.component('pv-file-upload',    FileUpload)
-    app.component('pv-float-label',    FloatLabel)
-    app.component('pv-icon-field',     IconField)
-    app.component('pv-input-icon',     InputIcon)
-    app.component('pv-input-text',     InputText)
-    app.component('pv-input-number',   InputNumber)
-    app.component('pv-menu',           Menu)
-    app.component('pv-rating',         Rating)
-    app.component('pv-row',            Row)
-    app.component('pv-sidebar',        Sidebar)
-    app.component('pv-tag',            Tag)
-    app.component('pv-textarea',       Textarea)
-    app.component('pv-toolbar',        Toolbar)
-    app.component('pv-toast',          Toast)
+app.component('pv-file-upload',    FileUpload)
+app.component('pv-float-label',    FloatLabel)
+app.component('pv-icon-field',     IconField)
+app.component('pv-input-icon',     InputIcon)
+app.component('pv-input-text',     InputText)
+app.component('pv-input-number',   InputNumber)
+app.component('pv-menu',           Menu)
+app.component('pv-rating',         Rating)
+app.component('pv-row',            Row)
+app.component('pv-sidebar',        Sidebar)
+app.component('pv-tag',            Tag)
+app.component('pv-textarea',       Textarea)
+app.component('pv-toolbar',        Toolbar)
+app.component('pv-toast',          Toast)
+
 
