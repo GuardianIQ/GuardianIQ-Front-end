@@ -35,6 +35,9 @@
 import axios from 'axios';
 
 export default {
+  props: {
+    personal: Object
+  },
   data() {
     return {
       fullName: '',
@@ -52,24 +55,24 @@ export default {
     },
     async realizarpago() {
       try {
-        const paymentData = {
-          fullName: this.fullName,
-          address: this.address,
-          cardNumber: this.cardNumber,
-          expiryDate: this.expiryDate,
-          cvv: this.cvv
+        const startDate = new Date();
+        const endDate = new Date();
+        endDate.setDate(startDate.getDate() + 1);
+
+        const newActiveService = {
+          idsecurityteam: this.personal.id,
+          startdate: startDate.toISOString().split('T')[0],
+          enddate: endDate.toISOString().split('T')[0]
         };
 
-
-        await axios.post('http://localhost:3000/payments', paymentData);
-
+        await axios.post(`http://localhost:3000/activeServices`, newActiveService);
         this.showSuccessMessage = true;
       } catch (error) {
-        console.error('Error while making payment:', error);
+        console.error('Error adding active service:', error);
       }
     }
   }
-};
+}
 </script>
 
 <style scoped>
