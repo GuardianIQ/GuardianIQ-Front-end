@@ -6,6 +6,7 @@
 
 
         <div class="fadeIn first">
+          <h1>Register</h1>
           <img src="../../../assets/images/logito.png" id="icon" alt="User Icon" />
         </div>
 
@@ -79,15 +80,7 @@ export default {
 <style scoped>
 
 
-.gotologin {
-  background: none;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  color: #069; /* color del texto */
-  text-decoration: underline; /* subrayado */
-}
+
 
 html {
   background-color: #11315C;
@@ -116,25 +109,25 @@ h2 {
 }
 
 .fadeIn.fourth {
-  background-color: #F9A825; /* Green background */
-  border: none; /* Remove borders */
-  color: white; /* White text */
-  padding: 15px 32px; /* Some padding */
-  text-align: center; /* Centered text */
-  text-decoration: none; /* Remove underline */
-  display: inline-block; /* Display as inline-block */
-  font-size: 16px; /* Change text size */
-  margin: 4px 2px; /* Some margin */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  transition-duration: 0.4s; /* Add animation */
+  background-color: #F9A825;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
 }
 
 .fadeIn.fourth:hover {
-  background-color: #F9A825; /* Green background on hover */
-  color: white; /* White text color on hover */
+  background-color: #F9A825;
+  color: white;
 }
 
-/* STRUCTURE */
+
 
 .wrapper {
   display: flex;
@@ -171,7 +164,7 @@ h2 {
 
 
 
-/* TABS */
+
 
 h2.inactive {
   color: #cccccc;
@@ -184,7 +177,7 @@ h2.active {
 
 
 
-/* FORM TYPOGRAPHY*/
+
 
 input[type=button], input[type=submit], input[type=reset]  {
   background-color: #F9A825;
@@ -250,11 +243,25 @@ input[type=text]::placeholder {
   color: #cccccc;
 }
 
+.gotologin {
+  background-color: #1040aa;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.gotologin:hover {
+  background-color: #1f35bc;
+}
 
 
-/* ANIMATIONS */
-
-/* Simple CSS3 Fade-in-down Animation */
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
@@ -290,7 +297,7 @@ input[type=text]::placeholder {
   }
 }
 
-/* Simple CSS3 Fade-in Animation */
+
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -334,7 +341,7 @@ input[type=text]::placeholder {
   animation-delay: 1s;
 }
 
-/* Simple CSS3 Fade-in Animation */
+
 .underlineHover:after {
   display: block;
   left: 0;
@@ -355,8 +362,6 @@ input[type=text]::placeholder {
 }
 
 
-
-/* OTHERS */
 
 *:focus {
   outline: none;

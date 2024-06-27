@@ -12,7 +12,8 @@
       </div>
       <div class="form-group">
         <label for="cardNumber">Número de Tarjeta:</label>
-        <input type="text" id="cardNumber" v-model="cardNumber" required />
+        <input type="text" id="cardNumber" v-model="cardNumber" required pattern="\d{16}" />
+        <span v-if="errors.cardNumber" class="error">{{ errors.cardNumber }}</span>
       </div>
       <div class="form-group">
         <label for="expiryDate">Fecha de Expiración:</label>
@@ -31,6 +32,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
@@ -40,16 +43,30 @@ export default {
       expiryDate: '',
       cvv: '',
       showSuccessMessage: false,
+      errors: {}
     };
   },
   methods: {
     submitForm() {
-
-      this.showSuccessMessage = true;
       this.realizarpago();
     },
-    realizarpago() {
-      this.$emit('pagoRealziado');
+    async realizarpago() {
+      try {
+        const paymentData = {
+          fullName: this.fullName,
+          address: this.address,
+          cardNumber: this.cardNumber,
+          expiryDate: this.expiryDate,
+          cvv: this.cvv
+        };
+
+
+        await axios.post('http://localhost:3000/payments', paymentData);
+
+        this.showSuccessMessage = true;
+      } catch (error) {
+        console.error('Error while making payment:', error);
+      }
     }
   }
 };

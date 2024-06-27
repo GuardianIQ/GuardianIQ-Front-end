@@ -2,7 +2,7 @@
   <div>
     <navbar-component></navbar-component>
     <div class="container">
-      <h2>Reservar Asesoría de Seguridad Local</h2>
+      <h2>Solicitar Asesoría de Seguridad Local</h2>
       <hr />
       <div class="form-container">
         <div class="form-group">
@@ -18,14 +18,14 @@
           <input v-model="correo" class="input-field" type="email" />
         </div>
         <div class="form-group">
-          <label>¿Ha sido vicntima de la delicuencia en su local?</label>
+          <label>¿Vive solo?</label>
           <div class="button-group">
-            <button @click="experienciaSeguridad = true" :class="{'active': experienciaSeguridad}">Sí</button>
-            <button @click="experienciaSeguridad = false" :class="{'active': !experienciaSeguridad}">No</button>
+            <button @click="consultlifecontext = false" :class="{'active': !consultlifecontext}">Sí</button>
+            <button @click="consultlifecontext = true" :class="{'active': consultlifecontext}">No</button>
           </div>
-          <div v-if="experienciaSeguridad" class="form-group">
-            <label>Cuantas veces</label>
-            <input v-model="aniosExperiencia" type="number" min="0" class="input-field" />
+          <div v-if="consultlifecontext" class="form-group">
+            <label>Cantidad de integrantes en su hogar</label>
+            <input v-model="cantidadPersonas" type="number" min="1" class="input-field" />
           </div>
         </div>
         <div class="form-group">
@@ -33,10 +33,16 @@
           <textarea v-model="experienciaPuesto" class="input-field textarea"></textarea>
         </div>
         <div class="form-group">
-          <label>Ubicación</label>
-          <input v-model="edad" type="number" min="0" class="input-field" />
+          <label>Distrito</label>
+          <select v-model="distrito" class="input-field">
+            <option v-for="distrito in distritos" :key="distrito" :value="distrito">{{ distrito }}</option>
+          </select>
         </div>
-        <button @click="agregarTarea" class="submit-button" :disabled="loading">Agregar</button>
+        <div class="form-group">
+          <label>Ubicación</label>
+          <input v-model="ubicacion" class="input-field" />
+        </div>
+        <button @click="addResults" class="submit-button" :disabled="loading">Agregar</button>
         <div v-if="showMessage" class="success-message">¡Su respuesta fue enviada correctamente!</div>
       </div>
     </div>
@@ -47,8 +53,6 @@
 import axios from 'axios';
 import navbarComponent from "../../../public/components/navbar/navbar.component.vue";
 
-const URL = 'http://localhost:5126/api/Tareas/';
-
 export default {
   name: 'OrderList',
   data() {
@@ -56,76 +60,50 @@ export default {
       nombre: '',
       apellido: '',
       correo: '',
-      experienciaSeguridad: false,
-      aniosExperiencia: '',
+      consultlifecontext: false,
+      cantidadPersonas: '',
       experienciaPuesto: '',
-      edad: '',
+      distrito: '',
+      ubicacion: '',
       loading: false,
       showMessage: false,
+      distritos: [
+        "Ancón", "Ate", "Barranco", "Breña", "Carabayllo", "Chaclacayo", "Chorrillos",
+        "Cieneguilla", "Comas", "El Agustino", "Independencia", "Jesús María", "La Molina",
+        "La Victoria", "Lima", "Lince", "Los Olivos", "Lurigancho", "Lurín", "Magdalena del Mar",
+        "Miraflores", "Pachacamac", "Pucusana", "Pueblo Libre", "Puente Piedra", "Punta Hermosa",
+        "Punta Negra", "Rímac", "San Bartolo", "San Borja", "San Isidro", "San Juan de Lurigancho",
+        "San Juan de Miraflores", "San Luis", "San Martín de Porres", "San Miguel", "Santa Anita",
+        "Santa María del Mar", "Santa Rosa", "Santiago de Surco", "Surquillo", "Villa El Salvador",
+        "Villa María del Triunfo"
+      ],
     };
   },
   components: {
     navbarComponent,
   },
   methods: {
-    agregarTarea() {
-      if (this.loading) return;
-
-      const tarea = {
-        nombre: this.nombre,
-        apellido: this.apellido,
-        correo: this.correo,
-        experienciaLaboral: this.experienciaSeguridad
-            ? `${this.aniosExperiencia} años`
-            : 'No',
-        experienciaPuesto: this.experienciaPuesto,
-        edad: this.edad,
-        estado: false,
-      };
-
+    async addResults() {
       this.loading = true;
-      this.showMessage = true;
-
-      axios
-          .post(URL, tarea)
-          .then((response) => {
-            console.log(response);
-            this.loading = false;
-            setTimeout(() => {
-              this.showMessage = false;
-            }, 3000);
-
-            // Limpiar los campos del formulario
-            this.nombre = '';
-            this.apellido = '';
-            this.correo = '';
-            this.experienciaSeguridad = false;
-            this.aniosExperiencia = '';
-            this.experienciaPuesto = '';
-            this.edad = '';
-          })
-          .catch((error) => {
-            console.error(error);
-            this.loading = false;
-            this.showMessage = false;
-          });
+      try {
+        const formData = {
+          nombre: this.nombre,
+          apellido: this.apellido,
+          correo: this.correo,
+          consultlifecontext: this.consultlifecontext,
+          cantidadPersonas: this.cantidadPersonas,
+          experienciaPuesto: this.experienciaPuesto,
+          distrito: this.distrito,
+          ubicacion: this.ubicacion,
+        };
+        await axios.post('http://localhost:3000/inquiriesrequested', formData);
+        this.showMessage = true;
+      } catch (error) {
+        console.error(error);
+      } finally {
+        this.loading = false;
+      }
     },
-    obtenerTareas() {
-      this.loading = true;
-      axios
-          .get(URL)
-          .then((response) => {
-            console.log(response);
-            this.loading = false;
-          })
-          .catch((error) => {
-            console.error(error);
-            this.loading = false;
-          });
-    },
-  },
-  created() {
-    this.obtenerTareas();
   },
 };
 </script>

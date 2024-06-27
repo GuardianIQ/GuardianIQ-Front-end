@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import navbarComponent from "../components/navbar/navbar.component.vue";
 export default {
   data() {
@@ -43,10 +44,14 @@ export default {
     navbarComponent
   },
   methods: {
-    submitForm() {
-
-      console.log('Formulario enviado:', this.form);
-      this.submitted = true;
+    async submitForm() {
+      try {
+        const response = await axios.post('http://localhost:3000/supportForms', this.form);
+        console.log('Formulario enviado:', this.form);
+        this.submitted = true;
+      } catch (error) {
+        console.error('Error al enviar el formulario:', error);
+      }
     },
 
   }
