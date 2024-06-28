@@ -4,13 +4,14 @@
     <h2 class="device-name">{{ device.marca }} {{ device.modelo }}</h2>
     <h1 class="device-price">S./{{device.precio}}</h1>
     <p class="device-description">{{ device.descripcion }}</p>
-
     <button class="device-button" @click="comprar">Comprar</button>
     <button @click="addToCart(device)">Agregar al carrito</button>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   props: {
     device: Object
@@ -19,9 +20,20 @@ export default {
     comprar() {
       alert(`Comprar ${this.device.nombre}`);
     },
-    addToCart(device) {
-      this.$emit('add-to-cart', device);
-    },
+    async addToCart(device) {
+      const newCartItem = {
+        productid: device.id,
+        datebuy: new Date().toISOString().split('T')[0]
+      };
+
+      try {
+        await axios.post(`http://localhost:3000/shoppingCart`, newCartItem);
+        this.$emit('add-to-cart', device);
+        alert(`Se agrego al al carrito de compras`);
+      } catch (error) {
+        console.error('Error adding to cart:', error);
+      }
+    }
   }
 }
 </script>
