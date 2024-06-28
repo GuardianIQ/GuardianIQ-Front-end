@@ -8,6 +8,7 @@ import TechnicalSupportPageComponent from "../public/pages/TechnicalSupport-page
 import RegisterComponent from "../public/components/Register/register.component.vue";
 import FormSupport from "../public/pages/FormSupport.vue";
 import payment from "../public/components/payment/payment.vue";
+import activeservices from "../securityContext/components/services/activeservices.vue"
 const routes = [
   { path: '/', component: () => import('../public/pages/home-page.component.vue') },
   { path: '/home', component: () => import('../public/pages/home-page.component.vue') },
@@ -15,6 +16,7 @@ const routes = [
   { path: '/PersonalCardPage', component: PersonalCardPageComponent },
   { path: '/SafetyDevicePage', component: SafetyDevicePageComponent },
   { path: '/login', component: LoginComponent },
+  { path: "/activeservices", component: activeservices},
   { path: '/carrito', component: ShoppingDeviceCard },
   { path: '/orderList', component: OrderListPageComponent },
   { path: '/formSupport', component: TechnicalSupportPageComponent },

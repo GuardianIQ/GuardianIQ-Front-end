@@ -340,109 +340,11 @@
       "rating": 4.4,
       "precio": 110,
       "descripción": "Alarma con una central de control con conexión a internet, un sensor de ventana o puerta y cable ethernet"
-    },
-    {
-      "id": 32,
-      "tipo": "Otros",
-      "marca": "August",
-      "modelo": "Smart Lock Pro",
-      "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_718947-MLU69078910309_042023-F.jpg",
-      "collectionId": 4,
-      "rating": 4.6,
-      "precio": 150,
-      "descripción": "Cerradura digital inteligente de 5 modos con indicador de bateria baja"
-    },
-    {
-      "id": 33,
-      "tipo": "Otros",
-      "marca": "Kwikset",
-      "modelo": "Kevo",
-      "imagen": "https://admincontent.bimobject.com/public/productimages/3ff35502-7f34-43b5-a5c4-74dc8f9dac9b/054b2797-0685-40c5-8825-74919befcadc/316983?width=675&height=675&compress=true",
-      "collectionId": 4,
-      "rating": 4.5,
-      "precio": 140,
-      "descripción": "Cerradura inteligente tradicional con tacto para abrir y con tecnología de bloqueo bluetooth"
-    },
-    {
-      "id": 34,
-      "tipo": "Otros",
-      "marca": "Schlage",
-      "modelo": "Encode",
-      "imagen": "https://m.media-amazon.com/images/I/61n7mD-vk-L._AC_SX679_.jpg",
-      "collectionId": 4,
-      "rating": 4.7,
-      "precio": 180,
-      "descripción": "Cerradura inteligente con llave Apple Home, con compatibilidad Wi-Fi y bloqueo y desbloqueo desde donde estes"
-    },
-    {
-      "id": 35,
-      "tipo": "Otros",
-      "marca": "Yale",
-      "modelo": "Assure Lock SL",
-      "imagen": "https://promart.vteximg.com.br/arquivos/ids/7223682-1000-1000/149306.jpg?v=638234889181900000",
-      "collectionId": 4,
-      "rating": 4.6,
-      "precio": 160,
-      "descripción": "Cerradura digital para puerta con pantalla táctil, alarma de intrusión e indicador de batería"
-    },
-    {
-      "id": 36,
-      "tipo": "Otros",
-      "marca": "Ultraloq",
-      "modelo": "UL3 BT",
-      "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_647311-MPE53228816460_012023-F.jpg",
-      "collectionId": 4,
-      "rating": 4.5,
-      "precio": 130,
-      "descripción": "Cerradura inteligente con huella dactilar, bloqueo inteligente y conexión Wi-Fi"
-    },
-    {
-      "id": 37,
-      "tipo": "Otros",
-      "marca": "Eufy",
-      "modelo": "Smart Lock Touch",
-      "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_708607-MPE73310762417_122023-F.jpg",
-      "collectionId": 4,
-      "rating": 4.6,
-      "precio": 140,
-      "descripción": "Cerradura digital con 8 baterías que duran alrededor de 8 meses, usa huellas dactilares, desbloqueo con un toque"
-    },
-    {
-      "id": 38,
-      "tipo": "Otros",
-      "marca": "SimpliSafe",
-      "modelo": "Smart Lock",
-      "imagen": "https://m.media-amazon.com/images/I/71cSiZ9cvqL._AC_SX679_.jpg",
-      "collectionId": 4,
-      "rating": 4.7,
-      "precio": 170,
-      "descripción": "Cerradura inteligente con bloqueo automático, alertas de seguridad y notificación del candado"
-    },
-    {
-      "id": 39,
-      "tipo": "Otros",
-      "marca": "Nest",
-      "modelo": "X Yale Lock",
-      "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_758345-MPE53228817245_012023-F.jpg",
-      "collectionId": 4,
-      "rating": 4.8,
-      "precio": 200,
-      "descripción": "Cerrojo de seguridad con pantalla táctil, conexión Wi-Fi y desbloqueo por celular"
-    },
-    {
-      "id": 40,
-      "tipo": "Otros",
-      "marca": "Level",
-      "modelo": "Lock",
-      "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_894434-MPE69761708794_062023-F.jpg",
-      "collectionId": 4,
-      "rating": 4.5,
-      "precio": 180,
-      "descripción": "Cerradura inteligente, entrada sin llave y acceso mediante smartphone"
     }
   ],
   "SegurityTeams": [
     {
+      "id": 1,
       "nombre": "Juan Perez",
       "distrito": "Miraflores",
       "edad": 30,
@@ -453,6 +355,7 @@
       "foto": "https://images.unsplash.com/photo-1554579780-381ea7224ddd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
+      "id": 2,
       "nombre": "Maria Rodriguez",
       "distrito": "San Isidro",
       "edad": 25,
@@ -631,6 +534,14 @@
       "disponibilidad": "Tiempo completo",
       "contrato": "Indefinido",
       "foto": "https://images.unsplash.com/photo-1554579780-381ea7224ddd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  ],
+  "activeServices": [
+    {
+      "idsecurityteam": 1,
+      "startdate": "2024-06-27",
+      "enddate": "2024-06-28",
+      "id": 1
     }
   ],
   "carritoCompras": [
