@@ -8,8 +8,7 @@
     <p class="guard-experience">Experiencia: {{ personal.experiencia }} años</p>
     <p class="guard-availability">Disponibilidad: {{ personal.disponibilidad }}</p>
     <button class="guard-button" @click="contratar">Contratar</button>
-    <payment v-if="showPayment" @pagoRealizado="handlePayment"></payment>
-    <button class="guard-button" @click="contactar">Contactar</button>
+    <payment v-if="showPayment" :personal="personal" @pagoRealizado="realizarpago"></payment>    <button class="guard-button" @click="contactar">Contactar</button>
   </div>
 </template>
 
