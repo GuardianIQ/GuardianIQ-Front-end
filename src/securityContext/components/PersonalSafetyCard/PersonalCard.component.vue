@@ -8,13 +8,20 @@
     <p class="guard-experience">Experiencia: {{ personal.experiencia }} años</p>
     <p class="guard-availability">Disponibilidad: {{ personal.disponibilidad }}</p>
     <button class="guard-button" @click="contratar">Contratar</button>
-    <payment v-if="showPayment" :personal="personal" @pagoRealizado="realizarpago"></payment>    <button class="guard-button" @click="contactar">Contactar</button>
+    <div v-if="showPayment" class="popup" @click.self="closePopup">
+      <div class="popup-content">
+        <button class="close-button" @click="closePopup">
+          <i class="fas fa-times"></i>
+        </button>
+        <payment :personal="personal" @close="closePopup" @pagoRealizado="realizarpago"></payment>
+      </div>
+    </div>
+    <button class="guard-button" @click="contactar">Contactar</button>
   </div>
 </template>
 
 <script>
 import payment from "../../../public/components/payment/payment.vue";
-import shoppingdeviceCard from "../SafetyDeviceCard-component/shoppingdeviceCard.vue";
 
 export default {
   props: {
@@ -26,23 +33,18 @@ export default {
     };
   },
   methods: {
-    submitForm() {
-
-      this.showSuccessMessage = true;
-      this.realizarpago();
-    },
     contratar() {
-      if (!this.showPayment) {
-        this.showPayment = true;
-      }
+      this.showPayment = true;
     },
     contactar() {
       alert(`Contactar a ${this.personal.nombre}`);
     },
-    handlePayment() {
-      setTimeout(() => {
-        this.showPayment = false;
-      }, 2000);
+    closePopup() {
+      this.showPayment = false;
+    },
+    realizarpago() {
+      this.showPayment = false;
+      alert('Pago realizado con éxito');
     }
   },
   components: {
@@ -61,6 +63,35 @@ export default {
   width: 300px;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .guard-photo {
